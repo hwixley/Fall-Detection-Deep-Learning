@@ -1,0 +1,32 @@
+data:	model:	regression:	classification:
+plain	lr	0.416		0.543
+plain 	svm	0.195		0.2
+
+re	lr	0.231		0.552
+re	svm	0.189		0.231
+
+rs	lr	0.653		15.22
+rs	svm	0.346		3.625
+
+
+take 2:
+
+data:	model:	regression:	classification:
+plain	lr	0.416		0.543
+plain 	svm	0.193		0.253
+
+re	lr	0.346		1.27
+re	svm	0.441		0.231
+
+rs	lr	0.432		2.82
+rs	svm	0.567		0.306
+
+
+take 3:
+
+data:	model:	reg_val:	class_val:	reg_test:	class_test:
+plain	lr	0.462		0.95		0.711		0.543
+plain	svm	0.177		0.2		0.192		0.2
+
+re	lr
+
