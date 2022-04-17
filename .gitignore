@@ -1,2 +1,4 @@
 pickles/
 train-val-test/
+polar-window20-lag0-resnet152.onnx
+polar-window20-lag0-resnet152-v2.onnx
