@@ -21,3 +21,7 @@ I trained LSTM and ResNet deep learning models on my dataset using variable wind
 
 ## Exporting:
 Exported my PyTorch model to `.tflite` using the following conversions: PyTorch -> ONNX -> TensorFlow -> TFLite
+
+## Live ECG Data During a Fall
+https://user-images.githubusercontent.com/57837950/234980065-a28f9c21-29b1-40d9-8c9e-2d8abbce4304.mp4
+(The section between the green and red bars represents a fall)
