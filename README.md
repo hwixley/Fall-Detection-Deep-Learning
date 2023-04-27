@@ -1,10 +1,10 @@
 # Fall Detection Processing & Modelling
 
-This was developed for my Undergraduate Thesis in AI & Computer Science at the University of Edinburgh. Please find the link to my report attached to this repository.
+This was developed for my Undergraduate Thesis in AI & Computer Science at the University of Edinburgh. Please find the link to my report attached to this repository. Overall ResNet152 proved to be the best performing model on a standardised, and shuffled dataset with a 2s window size which achieved 92.8% AUC, 87.28% sensitivity, and 98.33% specificity.
 
 <hr>
 
-## Live ECG Data During a Fall
+## Example of Live ECG Data During a Fall
 ![live_ecg_fall_data](https://user-images.githubusercontent.com/57837950/234981477-71fdd748-00c3-4ca7-a6d9-974659a8237d.gif)<br>
 (The section between the green and red bars represents a fall)
 
@@ -19,7 +19,9 @@ This was developed for my Undergraduate Thesis in AI & Computer Science at the U
 6. Label the data by applying the sigmoid function to the average label in a sliding window (where 1 represents fall and 0 no fall)
 
 ## Modelling
-I trained LSTM and ResNet deep learning models on my dataset using variable window sizes and tuning parameters. Overall ResNet152 proved to be the best performing model on a standardised, and shuffled dataset with a 2s window size which achieved 92.8% AUC, 87.28% sensitivity, and 98.33% specificity. 
+I first trained and tested some baseline models (such as K-Nearest Neighbours, Gaussian Naive Bayes, simple Neural Networks, etc.) to get an insight on the performance of my data on simple models. In the end they all seemed to average out at around 70% AUC, the best performing model here was K-Nearest Neighbours with k set to 3 with a test AUC of 72.17%.
+
+After this I trained LSTM and ResNet deep learning models on my dataset using variable window sizes and tuning parameters. Overall ResNet152 proved to be the best performing model on a standardised, and shuffled dataset with a 2s window size which achieved 92.8% AUC, 87.28% sensitivity, and 98.33% specificity. 
 
 ![fall-detection-resnet-performance-graph](https://user-images.githubusercontent.com/57837950/233863694-4d9e1fd2-4c03-46a6-b7a0-1b9367f603e5.png)
 
@@ -29,3 +31,5 @@ I trained LSTM and ResNet deep learning models on my dataset using variable wind
 
 ## Exporting:
 Exported my PyTorch model to `.tflite` using the following conversions: PyTorch -> ONNX -> TensorFlow -> TFLite
+
+This conversion was done to allow the ML model to be able to be run locally in the background on a user's mobile phone.
